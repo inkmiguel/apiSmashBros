@@ -13,9 +13,15 @@ function abrirPersonajeDirecto() {
                 return res.json();
             })
             .then(data => {
-                mostrarModal(`<strong>Nombre:</strong> ${data.name}<br>
-                              <strong>Juego:</strong> ${data.game || 'N/A'}<br>
-                              <strong>Descripción:</strong> ${data.description || 'N/A'}`);
+                const url = `/Personajes/${encodeURIComponent(nombre)}`;
+                mostrarModal(
+                    `<strong>JSON:</strong> <a href="${url}" target="_blank">${url}</a><br>
+                     <strong>Nombre:</strong> ${data.name}<br>
+                     <strong>Imagen:</strong><br>
+                     <img src="${data.image || ''}" alt="${data.name}" style="max-width:100%;height:auto;"><br>
+                     <strong>Juego:</strong> ${data.franchise || 'N/A'}<br>
+                     <strong>Descripción:</strong> ${data.description || 'N/A'}`
+                );
             })
             .catch(() => mostrarModal("Personaje no encontrado"));
     }
