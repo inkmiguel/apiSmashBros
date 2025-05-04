@@ -1,16 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Super Smash Bros API</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Super Smash Bros Api</h1>
-    <div>
-        <a href="/Personajes"><button>Ver json de los personajes</button></a>
+    <div class="container">
+        <h1>Super Smash Bros API</h1>
+        <p>
+            Una API REST para consultar información de personajes de Super Smash Bros.<br>
+        </p>
+        <div class="endpoints">
+            <div class="endpoint">
+                <strong>Lista de personajes</strong><br>
+                <a href="/Personajes"><code>GET /Personajes</code></a>
+                <div>Obtiene todos los personajes disponibles.</div>
+            </div>
+            <div class="endpoint">
+                <strong>Detalle de personaje</strong><br>
+                <code>GET /Personajes/&lt;name&gt;</code>
+                <div>Obtiene la información de un personaje específico por su <code>name</code>.</div>
+            </div>
+            <div class="endpoint">
+                <strong>Consulta directa por nombre</strong><br>
+                <div class="consulta-directa">
+                    <span class="url-base">
+                        http://localhost:3000/Personajes/
+                    </span>
+                    <input id="personajeDirectInput" type="text" placeholder="Ej: mario" class="input-personaje">
+                    <button onclick="abrirPersonajeDirecto()" class="btn-ir">Ir</button>
+                </div>
+            </div>
+            <!-- Puedes agregar más endpoints aquí -->
+        </div>
+        <footer>
+            &copy; 2025 Super Smash Bros API. Proyecto educativo.
+        </footer>
     </div>
 </body>
-<script src="script.js"></script>
+<script>
+</script>
+<script src="scripts.js"></script>
 </html>
