@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Super Smash Bros API</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+    <div class="header nintendo-header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Nintendo.svg" alt="Nintendo Logo"
+            class="nintendo-logo">
+    </div>
     <div class="container">
-        <h1>Super Smash Bros API</h1>
-        <p>
-            Una API REST para consultar información de personajes de Super Smash Bros.<br>
-        </p>
         <div class="endpoints">
             <div class="endpoint">
                 <strong>Lista de personajes</strong><br>
@@ -38,13 +40,19 @@
         <div id="modal" class="modal">
             <div class="modal-content">
                 <span id="closeModal" class="close">&times;</span>
-                <div id="modalBody"></div>
+                <div id="modalNombre"></div>
+                <div id="modalImagen"></div>
+                <div id="modalFranquicia"></div>
+                <div id="modalDescripcion"></div>
+                <div id="modalJson"></div>
             </div>
         </div>
+
         <footer>
-            &copy; 2025 Super Smash Bros API. Proyecto educativo.
+            &copy; 2025 Super Smash Bros API. Proyecto con fines de entretenimiento.
         </footer>
     </div>
 </body>
 <script src="scripts.js"></script>
+
 </html>

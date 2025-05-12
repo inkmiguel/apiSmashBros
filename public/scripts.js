@@ -13,17 +13,26 @@ function abrirPersonajeDirecto() {
                 return res.json();
             })
             .then(data => {
-                const url = `/Personajes/${encodeURIComponent(nombre)}`;
-                mostrarModal(
-                    `<strong>JSON:</strong> <a href="${url}" target="_blank">${url}</a><br>
-                     <strong>Nombre:</strong> ${data.name}<br>
-                     <strong>Imagen:</strong><br>
-                     <img src="${data.image || ''}" alt="${data.name}" style="max-width:100%;height:auto;"><br>
-                     <strong>Juego:</strong> ${data.franchise || 'N/A'}<br>
-                     <strong>Descripción:</strong> ${data.description || 'N/A'}`
-                );
+                document.getElementById('modalJson').innerHTML =
+                    `<strong>JSON:</strong> <a href="/Personajes/${encodeURIComponent(nombre)}" target="_blank">/Personajes/${encodeURIComponent(nombre)}</a>`;
+                document.getElementById('modalNombre').innerHTML =
+                    `${data.name}`;
+                document.getElementById('modalImagen').innerHTML =
+                    `<img src="${data.image || ''}" alt="${data.name}">`;
+                document.getElementById('modalFranquicia').innerHTML =
+                    `<strong>Juego:</strong> ${data.franchise || 'N/A'}`;
+                document.getElementById('modalDescripcion').innerHTML =
+                    `<strong>Descripción:</strong> ${data.description || 'N/A'}`;
+                document.getElementById('modal').style.display = 'block';
             })
-            .catch(() => mostrarModal("Personaje no encontrado"));
+            .catch(() => {
+                document.getElementById('modalJson').innerHTML = '';
+                document.getElementById('modalNombre').innerHTML = '';
+                document.getElementById('modalImagen').innerHTML = '';
+                document.getElementById('modalFranquicia').innerHTML = '';
+                document.getElementById('modalDescripcion').innerHTML = 'Personaje no encontrado';
+                document.getElementById('modal').style.display = 'block';
+            });
     }
 }
 

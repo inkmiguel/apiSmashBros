@@ -89,31 +89,94 @@ footer {
     cursor: pointer;
 }
 
-#personajeDirectInput{
-    color: #222;
-    font-size: 1em;
+
+.nintendo-header {
+    background: #e60012;
+    color: #fff;
+    padding: 20px 0 24px 0;
+    text-align: left;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    position: relative;
 }
 
-/* styles.css */
+.nintendo-logo {
+    width: 120px;
+    margin-bottom: 12px;
+}
+.nintendo-header h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    font-size: 2.5rem;
+    margin: 0 0 8px 0;
+    letter-spacing: 2px;
+}
+.nintendo-header p {
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 400;
+}
+
 .modal {
     display: none;
     position: fixed;
     z-index: 1000;
-    left: 0; top: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.8);
 }
+
 .modal-content {
-    background: #fff;
-    color: #222;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 300px;
+    background: linear-gradient(135deg, #222 80%, #ffcc00 100%);
+    color: #fff;
+    margin: 6% auto;
+    padding: 32px 24px 24px 24px;
+    border-radius: 18px;
+    border: 4px solid #ffcc00;
+    width: 340px;
     position: relative;
+    box-shadow: 0 0 32px #000a, 0 0 0 8px #e60012 inset;
+    text-align: center;
+    font-family: 'Arial Black', Arial, sans-serif;
 }
+
+#modalImagen img {
+    border: 6px solid #ffcc00;
+    border-radius: 16px;
+    background: #111;
+    margin: 16px 0 12px 0;
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    box-shadow: 0 0 16px #e60012;
+}
+
+#modalNombre {
+    font-size: 2rem;
+    color: #ffcc00;
+    margin-bottom: 8px;
+    text-shadow: 2px 2px 0 #e60012, 0 0 8px #000;
+    font-family: 'Arial Black', Arial, sans-serif;
+}
+
+#modalFranquicia, #modalDescripcion {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #fff;
+    text-shadow: 1px 1px 0 #000;
+}
+
+#modalJson {
+    margin-top: 12px;
+    font-size: 0.95rem;
+    color: #ffcc00;
+}
+
 .close {
     position: absolute;
-    top: 8px; right: 12px;
-    font-size: 24px;
+    top: 8px; right: 16px;
+    font-size: 28px;
+    color: #ffcc00;
     cursor: pointer;
+    text-shadow: 1px 1px 0 #e60012;
 }
